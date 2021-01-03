@@ -14,7 +14,8 @@ const forecast = (latitude, longitude, callback ) => {
             const temp = body.current.temperature
             const feelslike = body.current.feelslike
             const weatherDesc = body.current.weather_descriptions[0]
-            callback(undefined,`${weatherDesc}. It is currently ${temp} degrees out. It feels like ${feelslike} degrees out.`)
+            const humidity = body.current.humidity
+            callback(undefined,`${weatherDesc}. It is currently ${temp} degrees out. It feels like ${feelslike} degrees out. The humidity is ${humidity}%`)
         }
     })
 
